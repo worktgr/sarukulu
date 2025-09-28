@@ -1,27 +1,29 @@
 # Sarukulu
 
-This repo contains the app code and a `supabase/` folder with:
-- `schema.sql` — authoritative DB snapshot (tables, functions, triggers, RLS)
-- `seed-data.sql` — optional sample data for local/dev
-- `storage-schema.sql` — Supabase Storage schema
-- `DB_README.md` — human-friendly database handbook
+Expo (React Native) app + Supabase schema.
 
-## Quick links
-- Database handbook: [`supabase/DB_README.md`](supabase/DB_README.md)
+## Repo Layout
+- `sarukulu-app/` — Expo app source
+- `supabase/` — SQL schema & seed files (for hosted Supabase)
 
-## Apply the schema to a Supabase project (Option A — Studio)
-1. Open **Supabase Studio → SQL Editor**
-2. Paste the full contents of `supabase/schema.sql` and click **Run**
-3. (Optional) Paste `supabase/seed-data.sql` and **Run** for demo data
-4. (If using images) Create **bucket**: `product-images` and set to **public**
+## Prerequisites (new laptop)
+- Git + SSH key set up with GitHub
+- Node LTS (via nvm is recommended)
+- npm (comes with Node)
+- Expo Go app on your phone (for testing)
+- Supabase project (get URL + Anon key from **Project Settings → API**)
 
-## Apply with psql (Option B — CLI)
-```bash
-# schema
-psql "postgresql://postgres:DB_PASSWORD@db.PROJECT_REF.supabase.co:5432/postgres?sslmode=require" -f supabase/schema.sql
+## 60-Second Bootstrap (Windows)
+```powershell
+# 1) Clone
+git clone git@github.com:worktgr/sarukulu.git
+cd sarukulu
 
-# optional seed
-psql "postgresql://postgres:DB_PASSWORD@db.PROJECT_REF.supabase.co:5432/postgres?sslmode=require" -f supabase/seed-data.sql
-```
+# 2) Create app .env from template (edit after)
+copy sarukulu-app\.env.example sarukulu-app\.env
+notepad sarukulu-app\.env   # fill EXPO_PUBLIC_SUPABASE_URL + EXPO_PUBLIC_SUPABASE_ANON_KEY
 
-> `schema.sql` is the source of truth. If docs ever disagree, trust the SQL.
+# 3) Install deps and run the app
+cd sarukulu-app
+npm install
+npx expo start
