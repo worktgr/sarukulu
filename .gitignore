@@ -1,0 +1,54 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Node / React / Expo
+node_modules/
+npm-debug.log*
+yarn-*.log*
+pnpm-debug.log*
+dist/
+build/
+.web-build/
+.expo/
+.expo-shared/
+.android/
+.ios/
+
+# Next.js / web
+.next/
+out/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Supabase local (keep migrations/config if present)
+supabase/.temp/
+supabase/.branches/
+supabase/docker/
+supabase/volumes/
+supabase/.env
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Logs
+*.log
+
+# Archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
