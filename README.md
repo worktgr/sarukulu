@@ -27,3 +27,11 @@ notepad sarukulu-app\.env   # fill EXPO_PUBLIC_SUPABASE_URL + EXPO_PUBLIC_SUPABA
 cd sarukulu-app
 npm install
 npx expo start
+## Status (Oct 1, 2025)
+
+- Expo SDK: 54
+- Start (recommended): `npx expo start --tunnel -c`
+- Env: copy `sarukulu-app/.env.example` → `sarukulu-app/.env` and fill `EXPO_PUBLIC_SUPABASE_URL` + `EXPO_PUBLIC_SUPABASE_ANON_KEY`
+- Babel: using `babel-preset-expo` + `react-native-reanimated/plugin` (plugin must be last)
+- Worklets mismatch fix: `npx expo install react-native-worklets@0.5.1` then restart with cache clear
+- Notes: Expo Go on phone must match SDK 54; force-quit & reopen Expo Go after upgrades
