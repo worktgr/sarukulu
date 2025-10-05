@@ -9,11 +9,15 @@ yarn-*.log*
 pnpm-debug.log*
 dist/
 build/
+web-build/
 .web-build/
 .expo/
 .expo-shared/
+android/
+ios/
 .android/
 .ios/
+.parcel-cache/
 
 # Next.js / web
 .next/
@@ -52,3 +56,20 @@ supabase/.env
 *.7z
 *.tar
 *.tar.gz
+
+# Mobile signing / secrets (very important)
+*.jks
+*.keystore
+*.keystore.properties
+*.p12
+*.p8
+*.pem
+*.key
+*.mobileprovision
+*.cer
+*.crt
+*.der
+
+# (Optional) If you ever add Firebase, consider ignoring these:
+# **/google-services.json
+# **/GoogleService-Info.plist
